@@ -82,7 +82,7 @@ def start(self):
 
 ### Example:
 
-Here is a simple robot implementation that will just walk circles and shows your location on the grid.
+Here is a simple robot implementation that will just walk circles and show your location on the grid.
 ```Python
 def get_my_location(grid):
 	for i in range(robot.get_grid_size()):
