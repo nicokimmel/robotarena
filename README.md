@@ -15,7 +15,7 @@ from robotarena_client import *
 ```
 
 Now you can access the class and build your own robot. Once it's your robot's turn the server will notify your client and execute your turn callback. The server also sends you the current grid so you can react depending on the other's location. To get your location you can search for your robot on the grid.
-Your callback should always return a tuple of exactly two actions.
+Your callback should always return a tuple of exactly two actions. It's also possible to use the same action twice.
 
 ### Constants:
 
