@@ -84,20 +84,22 @@ def start(self):
 
 Here is a simple robot implementation that will just walk circles and show your location on the grid.
 ```Python
+from robotarena_client import *
+
 def get_my_location(grid):
-	for i in range(robot.get_grid_size()):
-		for j in range(robot.get_grid_size()):
+	for i in range(my_robot.get_grid_size()):
+		for j in range(my_robot.get_grid_size()):
 			target_robot = grid[i][j]
-			if target_robot and target_robot["name"] == robot.get_name():
+			if target_robot and target_robot["name"] == my_robot.get_name():
 				return target_robot["x"], target_robot["y"], target_robot["direction"]
 
 def my_turn(grid):
-	x, y, direction = get_my_location(grid, robot.get_name())
+	x, y, direction = get_my_location(grid)
 	print("My location:\n", "x=", x, "y=", y, "direction:", direction)
 	return (MOVE, TURN_LEFT)
 
 my_robot = Robot("MyRobot")
 my_robot.connect("127.0.0.1", 5901)
-my_robot.set_turn(turn)
+my_robot.set_turn(my_turn)
 my_robot.start()
 ```
